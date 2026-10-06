@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fanfanSpace的名片</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #217bdd;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Microsoft Yahei", system-ui, sans-serif;
+            transition: background 0.4s ease;
+        }
+        .card {
+            background-color: #ffffff;
+            padding: 60px 80px;
+            border-radius: 20px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .card:hover{
+            transform: translateY(-8px);
+        }
+        h1 {
+            color: #2d3748;
+            font-size: 2.4rem;
+            letter-spacing: 2px;
+        }
+        .sub-text{
+            margin-top:16px;
+            color:#718096;
+            font-size:1.1rem;
+        }
+        .tip-text{
+            margin-top:12px;
+            color:#dd4444;
+            font-size:0.9rem;
+        }
+        .button-group-top{
+            margin-top: 30px;
+            display: flex;
+            gap:16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .button-group-bottom{
+            margin-top: 40px;
+            display: flex;
+            gap:16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 28px;
+            background-color: #217bdd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1560b3;
+            transform: scale(1.05);
+        }
+        .btn-backup{
+            background-color:#22aa55;
+        }
+        .btn-backup:hover{
+            background-color:#188842;
+        }
+        .btn-github{
+            background-color:#24292f;
+        }
+        .btn-github:hover{
+            background-color:#0d1117;
+        }
+        .btn-clear{
+            background-color:#ff4444;
+        }
+        .btn-clear:hover{
+            background-color:#cc2222;
+        }
+        .btn-return{
+            margin-top:24px;
+            background-color:#ff8800;
+        }
+        .btn-return:hover{
+            background-color:#dd7700;
+        }
+        .btn-bilibili{
+            margin-top:12px;
+            background-color:#fb7299;
+        }
+        .btn-bilibili:hover{
+            background-color:#e25c83;
+        }
+        .secret-text{
+            font-size: 22px;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body id="pageBody">
+    <div class="card" id="mainCard">
+        <h1>你好 I am 凡凡Space</h1>
+        <div class="sub-text">欢迎来到我的网站✨</div>
+        <div class="tip-text">如果玩MC打不开，请点绿色备用按钮</div>
+
+        <div class="button-group-top">
+            <button class="btn" onclick="toggleBackground()">点击我背景换色</button>
+        </div>
+
+        <div class="button-group-bottom">
+            <button class="btn" onclick="window.open('https://mcjs.link','_blank')">玩 MC</button>
+            <button class="btn btn-backup" onclick="window.open('https://144449.xyz','_blank')">备用入口</button>
+            <button class="btn btn-github" onclick="window.open('https://github.com','_blank')">GitHub</button>
+            <button class="btn btn-clear" onclick="showSecret()">神秘</button>
+        </div>
+    </div>
+
+    <script>
+        let isBlue = true;
+        const blueColor = "#217bdd";
+        const whiteColor = "#ffffff";
+        const originalCardHtml = document.getElementById("mainCard").innerHTML;
+
+        function toggleBackground(){
+            const body = document.getElementById("pageBody");
+            if(isBlue){
+                body.style.background = whiteColor;
+                isBlue = false;
+            }else{
+                body.style.background = blueColor;
+                isBlue = true;
+            }
+        }
+
+        function showSecret(){
+            const card = document.getElementById("mainCard");
+            card.innerHTML = `
+                <div class="secret-text">这里是神秘区域</div>
+                <button class="btn btn-bilibili" onclick="window.open('https://www.bilibili.com','_blank')">哔哩哔哩</button>
+                <button class="btn btn-return" onclick="goBack()">返回</button>
+            `;
+        }
+
+        function goBack(){
+            document.getElementById("mainCard").innerHTML = originalCardHtml;
+        }
+    </script>
+</body>
+</html>

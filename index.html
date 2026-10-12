@@ -1,25 +1,25 @@
-
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <标题>fanfanSpace的网站</标题>
-    <样式>
+    <title>fanfanSpace的网站</title>
+    <style>
         * {
             margin: 0;
-            内边距: 0;
+            padding: 0;
             box-sizing: border-box;
         }
         body {
-            背景: #217bdd;
-            最小高度: 100vh;
-            显示: flex;
+            background: #217bdd;
+            min-height: 100vh;
+            display: flex;
             justify-content: center;
             align-items: center;
-            font-family: "微软雅黑", system-ui, sans-serif;
+            font-family: "Microsoft Yahei", system-ui, sans-serif;
             transition: background 0.4s ease;
         }
-
+        .card {
             background-color: #ffffff;
             padding: 60px 80px;
             border-radius: 20px;
@@ -27,39 +27,39 @@
             text-align: center;
             transition: transform 0.3s ease;
         }
-        .卡片:悬停{
+        .card:hover{
             transform: translateY(-8px);
         }
         h1 {
-            颜色: #2d3748;
-            字体大小: 2.4rem;
+            color: #2d3748;
+            font-size: 2.4rem;
             letter-spacing: 2px;
         }
-        .子文本{
+        .sub-text{
             margin-top:16px;
-            颜色:#718096;
-            字体大小:1.1rem;
+            color:#718096;
+            font-size:1.1rem;
         }
-        .提示文本{
+        .tip-text{
             margin-top:12px;
-            颜色:#dd4444;
-            字体大小:0.9rem;
+            color:#dd4444;
+            font-size:0.9rem;
         }
         .button-group-top{
             margin-top: 30px;
-            显示: flex;
+            display: flex;
             gap:16px;
             justify-content: center;
             flex-wrap: wrap;
         }
         .button-group-bottom{
             margin-top: 40px;
-            显示: flex;
+            display: flex;
             gap:16px;
             justify-content: center;
             flex-wrap: wrap;
         }
-        .按钮 {
+        .btn {
             padding: 12px 28px;
             background-color: #217bdd;
             color: white;
